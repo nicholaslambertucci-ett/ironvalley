@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8c414ab529b6f4a9030e7ef36213a9, type: 3}
+  m_Name: POI_1_Content
+  m_EditorClassIdentifier: 
+  LocalizedTexts:
+  - language: 0
+    text: "Inaugurato nel 1907 con la denominazione di Ferriere Piemontesi, lo stabilimento
+      di propriet\xE0 del gruppo francese Ferri\xE9re-sous-Jougne fu acquisito nel
+      1917 dal gruppo Fiat. Destinato alla produzione e alla lavorazione dell'acciaio,
+      si afferm\xF2 presto come uno dei pi\xF9 importanti stabilimenti del gruppo
+      industriale torinese. Nel corso della seconda guerra mondiale al suo interno
+      vi lavoravano circa 5000 operai. Punto nevralgico dell'antifascismo e della
+      Resistenza torinese, nell'aprile del 1945 le Ferriere Fiat furono teatro di
+      violenti combattimenti tra formazioni partigiane e tedeschi nelle giornate dell'insurrezione
+      di Torino. Nel 1978 le Ferriere confluirono nella Teksid, societ\xE0 che raggruppava
+      tutte le attivit\xE0 metallurgiche e siderurgiche della Fiat. Dopo essere stata
+      assorbita dalla Finsider (IRI) nel 1982, l'acciaieria venne chiusa definitivamente
+      nel 1992 in seguito alla forte crisi che colp\xEC la siderurgia italiana."
+  - language: 1
+    text: "Inaugurated in 1907 with the name Piedmontese Ironworks, the plant owned
+      by the Ferri\xE9re-sous-Jougne French group, was acquired by the Fiat group
+      in 1917. Intended for the production and processing of steel, it soon established
+      itself as one of the important plant in the industrial group in Turin. During
+      the World War II, 5000 workers worked in it. Focal point for the Resistance
+      and the anti-fascism in Turin, in April 1945 the Fiat ironworks were the field
+      of violent fights between Germans and Partisans in the insurrection days in
+      Turin. In 1978 the ironworks joined with Teksid, company that gathered all the
+      iron and steel and metallurgical activities of Fiat. After having been taken
+      up by Finsider in 1982, the ironwork was definitely closed in 1992, after the
+      strong crisis that hit the Italian iron and steel industry."

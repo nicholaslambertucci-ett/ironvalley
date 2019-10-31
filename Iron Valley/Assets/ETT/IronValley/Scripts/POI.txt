@@ -1,0 +1,28 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class POI : MonoBehaviour
+{
+    public Text[] Texts;
+
+    /// <summary>
+    /// Enables or disables the text Ui element of this POI
+    /// </summary>
+    /// <param name="textElementIndex">The index of the text in Texts</param>
+    /// <param name="tf">enable or disable</param>
+    public void EnablePOIText(int textElementIndex, bool tf)
+    {
+        Texts[textElementIndex].gameObject.SetActive(tf);
+    }
+
+    /// <summary>
+    /// Sets the text of the poi, maybe useless?
+    /// </summary>
+    /// <param name="textElementIndex"></param>
+    /// <param name="text"></param>
+    public void SetPOIText(int textElementIndex, string text) {
+        Texts[textElementIndex].text = text;
+    }
+}
