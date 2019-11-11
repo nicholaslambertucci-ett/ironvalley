@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Ett.Scripts
+namespace Ett.IronValley.Scripts
 {
     public class OpenLink : MonoBehaviour
     {

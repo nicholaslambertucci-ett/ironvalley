@@ -43,12 +43,8 @@ namespace Ett.Scripts.Localization
             ChangeLanguage(lang_iso);
         }
 
-
-        //  private Language currLanguage;
-        // Use this for initialization
-        void Init()
+        private void Awake()
         {
-
             if (Instance == null)
             {
                 //DontDestroyOnLoad(this.gameObject);
@@ -61,6 +57,12 @@ namespace Ett.Scripts.Localization
                 Destroy(this);
                 return;
             }
+        }
+
+        //  private Language currLanguage;
+        // Use this for initialization
+        void Init()
+        {
             if (isAndroidTest)
             {
                 //Debug.Log("language =" + lang_test);
@@ -70,12 +72,12 @@ namespace Ett.Scripts.Localization
         }
         void Start()
         {
-            Init();
+            //Init();
             StartCoroutine(WaitForLanguageConfiguration());
         }
         public void ChangeLanguage(string language_iso)
         {
-            Debug.Log("language =" + language_iso);
+            Debug.Log("language = " + language_iso);
             switch (language_iso)
             {
                 case "it":
@@ -118,5 +120,23 @@ namespace Ett.Scripts.Localization
             SelectedLanguage = language;
             LanguageChangedEvent(language);
         }
+
+        /// <summary>
+        /// Gets the string from a Localization Asset for the currently selected language
+        /// </summary>
+        /// <param name="list">the list to check</param>
+        /// <returns>The string, if found, or an empty string if not found</returns>
+        public static string GetCurrentLanguageStringFromAsset(LocalizationListManager list)
+        {
+            var res = "";
+            foreach (var lt in list.LocalizedTexts)
+            {
+                if (lt.language.Equals(SelectedLanguage)) {
+                    res = lt.text; break; 
+                }
+            }
+            return res;
+        }
+
     }
 }

@@ -2,27 +2,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-public struct IronPOI
+namespace Ett.IronValley.Scripts.Data
 {
-    [SerializeField] public string Title;
-    [SerializeField] public string Description;
-    [SerializeField] public string Tag; //poi-1, poi-2, poi-3
+    [System.Serializable]
 
-    //dallo sheetitem di tipo gallery il cui tag è video
-    [SerializeField] public string VideoMediaPath;
-    [SerializeField] public string VideoLabel;
+    public struct IronPOI
+    {
+        [SerializeField] public string Title;
+        [SerializeField] public string Description;
+        [SerializeField] public string Tag; //poi-1, poi-2, poi-3
 
-    //dallo sheetitem che attiva una sheet il cui tag è approfondimenti
-    [SerializeField] public IronGallery? Approfondimenti;
+        //dallo sheetitem di tipo gallery il cui tag è video
+        [SerializeField] public string VideoMediaPath;
+        [SerializeField] public string VideoLabel;
 
-    //dallo sheetitem che attiva una sheet il cui tag è foto
-    [SerializeField] public IronGallery[] MediaGallery; //gallery foto o gallery di gallery
-    [SerializeField] public string MediaGalleryLabel; // titolo della gallery
+        //dallo sheetitem che attiva una sheet il cui tag è approfondimenti
+        [SerializeField] public IronGallery? Insights;
 
-    [SerializeField] Ett.Vdt.NativeApplication.Data.Vrs.Vr? VrView; 
+        //dallo sheetitem che attiva una sheet il cui tag è foto
+        [SerializeField] public IronGallery[] MediaGallery; //gallery foto o gallery di gallery
+        [SerializeField] public string MediaGalleryLabel; // titolo della gallery
 
-    [SerializeField] public Guid Uuid;
+        [SerializeField] Ett.Vdt.NativeApplication.Data.Vrs.Vr? VrView;
 
+        [SerializeField] public Guid Uuid;
+
+    }
 }
 

@@ -1,60 +1,88 @@
-﻿using System.Collections;
+﻿using Ett.Scripts;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PoiViewController : MonoBehaviour
+namespace Ett.IronValley.Scripts
 {
-
-    public Button PhotoGalleryBtn;
-    public Button InsightsBtn;
-    public Button VideoBtn;
-    public Text AdviceTxt;
-
-    private void Start()
+    public class PoiViewController : MonoBehaviour
     {
+        [SerializeField]
+        public Guid Guid;
+        //just to have the Guid in editor
+        public string TestGuid;
 
-    }
+        public OpenClose GPSPanel;
+        public OpenClose MapPanel;
 
-    private enum ButtonType { Insights, MediaGallery, Video }
+        //public OpenClose WebcamPage;
 
-    public void Configure(IronPOI poi)
-    {
-        ConfigureButton(InsightsBtn, ButtonType.Insights, poi);
-        ConfigureButton(PhotoGalleryBtn, ButtonType.MediaGallery, poi);
-        ConfigureButton(VideoBtn, ButtonType.Video, poi);
-        ///the advice text should be on when the poi is still not visited
-        AdviceTxt.gameObject.SetActive(!GetPoiVisited(poi.Uuid));
-    }
-
-    private void ConfigureButton(Button btn, ButtonType type, IronPOI poi)
-    {
-        switch (type)
+        private void Start()
         {
-            case ButtonType.Insights:
-                btn.interactable = poi.Approfondimenti.HasValue && GetPoiVisited(poi.Uuid);
-                btn.gameObject.SetActive(poi.Approfondimenti.HasValue);
-                break;
-            case ButtonType.MediaGallery:
-                btn.interactable = poi.MediaGallery != null && poi.MediaGallery.Length > 0 && GetPoiVisited(poi.Uuid);
-                btn.gameObject.SetActive(poi.Approfondimenti.HasValue);
-                break;
-            case ButtonType.Video:
-                btn.interactable = string.IsNullOrWhiteSpace(poi.VideoMediaPath) && GetPoiVisited(poi.Uuid);
-                btn.gameObject.SetActive(string.IsNullOrWhiteSpace(poi.VideoMediaPath));
-                break;
-            default:
-                break;
+
         }
-    }
 
-    public void SetPoiVisited(System.Guid guid)
-    {
-        PlayerPrefs.SetInt($"poi_{guid}_visited", 1);
-    }
+        public void Configure(Data.IronPOI poi)
+        {
+            this.Guid = poi.Uuid;
+            TestGuid = this.Guid.ToString();
 
-    public bool GetPoiVisited(System.Guid guid)
-    {
-        return PlayerPrefs.GetInt($"poi_{guid}_visited") == 1;
+            POIManager.PoiVisitedEvent += ((guid) =>
+            {
+                if (this.Guid.Equals(guid))
+                {
+                    Debug.Log($"poi {guid} visited");
+
+                    //this configures the action that should happen when the OpenCameraButton of GPS_POI_UI is clicked
+                    GPSPanel.gameObject.GetComponent<GPS_POI_UI>().Configure(
+                    () =>
+                    {
+                        //every time we configure the webcam to restart with new listeners, since webcam page is shared between views
+                        ConfigureWebcamPage(poi);
+                        //MainManager.Instance.OpenWebCam();
+                    });
+
+                    GPSPanel.Open();
+                }
+            });
+
+            MapPanel.gameObject.GetComponent<MapPOI_UI>().Configure(poi);
+        }
+
+        public void ConfigureWebcamPage(Data.IronPOI poi)
+        {
+            MainManager.Instance.WebcamPage.gameObject.GetComponent<WebcamUI>().Configure(poi);
+        }
+
+        private bool _isMapViewOpen;
+        private bool _isGpsViewOpen;
+
+        public void OpenCloseMapView()
+        {
+            var toOpen = !_isMapViewOpen;
+            OpenCloseMapPoiView(toOpen);
+        }
+
+        public void OpenCloseMapPoiView(bool toOpen)
+        {
+            if ((toOpen && _isMapViewOpen) || (!toOpen && !_isMapViewOpen)) return;
+
+            _isMapViewOpen = toOpen;
+        }
+
+        public void OpenCloseGpsPoiView()
+        {
+            var toOpen = !_isGpsViewOpen;
+            OpenCloseGpsPoiView(toOpen);
+        }
+
+        public void OpenCloseGpsPoiView(bool toOpen)
+        {
+            if ((toOpen && _isGpsViewOpen) || (!toOpen && !_isGpsViewOpen)) return;
+
+            _isGpsViewOpen = toOpen;
+        }
     }
 }

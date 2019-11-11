@@ -41,7 +41,7 @@ namespace Ett.Scripts.Localization
 
         void ChangeLanguage(LocalizationManager.Language newLanguage)
         {
-            //Debug.Log("Localization Component Change Language: " + newLanguage);
+            // Debug.Log("Localization Component Change Language: " + newLanguage);
             localizationTextsDict = new Dictionary<LocalizationManager.Language, string>();
             lang = newLanguage;
             foreach (LocalizedText locText in localizationList.LocalizedTexts)
@@ -64,12 +64,6 @@ namespace Ett.Scripts.Localization
 
                 //  GetComponent<Text>().text = textInLanguage;
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

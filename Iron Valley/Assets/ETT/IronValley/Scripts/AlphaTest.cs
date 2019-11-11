@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// Sets the minimum threshold of the Image alpha test to avoid clicks in transparent areas
-/// </summary>
-[RequireComponent(typeof(Image))]
-public class AlphaTest : MonoBehaviour
+namespace Ett.IronValley.Scripts
 {
-    public bool HitTestActive;
-    public float MinimumThreshold = .0001f;
-
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Sets the minimum threshold of the Image alpha test to avoid clicks in transparent areas
+    /// </summary>
+    [RequireComponent(typeof(Image))]
+    public class AlphaTest : MonoBehaviour
     {
-        if (HitTestActive)
+        public bool HitTestActive;
+        public float MinimumThreshold = .0001f;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            // Debug.Log(this.GetComponent<Image>().alphaHitTestMinimumThreshold);
-            this.GetComponent<Image>().alphaHitTestMinimumThreshold = MinimumThreshold;
+            if (HitTestActive)
+            {
+                // Debug.Log(this.GetComponent<Image>().alphaHitTestMinimumThreshold);
+                this.GetComponent<Image>().alphaHitTestMinimumThreshold = MinimumThreshold;
+            }
         }
     }
 }

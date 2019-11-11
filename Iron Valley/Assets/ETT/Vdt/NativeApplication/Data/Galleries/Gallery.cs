@@ -5,5 +5,6 @@
         public int Id;
         public GalleryItem[] Items;
         public string Tag;
+        public string ThumbPath;
     }
 }

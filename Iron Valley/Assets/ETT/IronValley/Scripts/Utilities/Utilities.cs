@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Ett.Scripts
+namespace Ett.IronValley.Scripts.Utilities
 {
     public static class Utilities
     {
@@ -14,17 +14,17 @@ namespace Ett.Scripts
 
         public static void FadeOut(CanvasGroup cg, Easing ease, float time, Action onEnd)
         {
-            SceneManager.Instance.StartCoroutine(FadeCor(FadeType.OUT, ease, cg, time, onEnd));
+            MainManager.Instance.StartCoroutine(FadeCor(FadeType.OUT, ease, cg, time, onEnd));
         }
 
         public static void FadeIn(CanvasGroup cg, Easing ease, float time, Action onEnd)
         {
-            SceneManager.Instance.StartCoroutine(FadeCor(FadeType.IN, ease, cg, time, onEnd));
+            MainManager.Instance.StartCoroutine(FadeCor(FadeType.IN, ease, cg, time, onEnd));
         }
 
         static IEnumerator FadeCor(FadeType type, Easing ease, CanvasGroup cg, float duration, Action onEnd)
         {
-            // Debug.Log($"starting fade {type} cor");
+            Debug.Log($"starting fade {type} cor");
             var startTime = Time.time;
 
             while ((startTime + duration) > Time.time)
@@ -53,12 +53,10 @@ namespace Ett.Scripts
             cg.interactable = type.Equals(FadeType.IN) ? true : false;
             onEnd?.Invoke();
         }
-
-
-
+        
         public static void WaitThenDoAction(float waitTime, Action onEnd)
         {
-            SceneManager.Instance.StartCoroutine(WaitThenDoActionCor(waitTime, onEnd));
+            MainManager.Instance.StartCoroutine(WaitThenDoActionCor(waitTime, onEnd));
         }
 
         static IEnumerator WaitThenDoActionCor(float waitTime, Action onEnd)

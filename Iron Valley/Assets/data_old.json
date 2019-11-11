@@ -1,0 +1,78 @@
+{
+   "IronPOIs":[
+      {
+         "Title":"Lo stabilimento delle Officine Savigliano (SNOS)",
+         "Description":"La Società Nazionale Officine Savigliano (SNOS), fondata a Savigliano nel 1879, aprì la sua sede a Torino nel 1899 per la produzione di costruzioni meccaniche, metalliche, elettriche, ferroviarie e tranviarie. Negli anni Venti del '900 questo stabilimento si estendeva su un'area di 55.000 metri quadrati, di cui 45.000 coperti, e al suo interno lavoravano oltre 1000 operai. Nel corso del Novecento fu teatro di grandi mobilitazioni operaie: gli scioperi del 1907, le occupazioni del cosiddetto \"Biennio rosso\" nel 1920-21, gli scontri insurrezionali per la Liberazione di Torino nel 1945. L'edificio, visibile oggi, è frutto dell’allargamento del 1917-1918 su progetto dall'architetto Enrico Bonicelli.",
+         "Tag":"poi-1",
+         "VideoMediaPath":"",
+         "VideoLabel":"",
+         "MediaGallery":[
+
+         ],
+         "MediaGalleryLabel":""
+      },
+      {
+         "Title":"Lo stabilimento Michelin",
+         "Description":"La Fabbrica Pneumatici Michelin, stabilimento italiano del gruppo francese eretto nel 1906, occupava la vasta area posta sud del fiume Dora, delimitata da Via Livorno, Corso Umbria e Via Daubree. Nei primi decenni di vita, al suo interno erano impiegati soprattutto operai, fabbri, meccanici e falegnami e il ciclo di lavorazione consisteva quasi completamente in operazioni manuali, dall’impastatura del caucciù per produrre la mescola alla pressatura della gomma sulle tele e all’estrazione degli pneumatici dagli stampi ancora caldi. Fino agli anni ’50 è lo stabilimento italiano più importante per la produzione di pneumatici per auto, biciclette, moto, mezzi pesanti, agricoli e aerei. Nel periodo 1930-1960 lo stabilimento subisce importanti trasformazioni e ingrandimenti, arrivando ad occupare nel 1970 circa 6000 dipendenti. L'impianto chiude la sua attività nel 1997.",
+         "Tag":"poi-2",
+         "VideoMediaPath":"",
+         "VideoLabel":"",
+         "MediaGallery":[
+
+         ],
+         "MediaGalleryLabel":""
+      },
+      {
+         "Title":"Le Ferriere Fiat",
+         "Description":"Inaugurato nel 1907 con la denominazione di Ferriere Piemontesi, lo stabilimento di proprietà del gruppo francese Ferriére-sous-Jougne fu acquisito nel 1917 dal gruppo Fiat. Destinato alla produzione e alla lavorazione dell'acciaio, si affermò presto come uno dei più importanti stabilimenti del gruppo industriale torinese. Nel corso della seconda guerra mondiale al suo interno vi lavoravano circa 5000 operai. Punto nevralgico dell'antifascismo e della Resistenza torinese, nell'aprile del 1945 le Ferriere Fiat furono teatro di violenti combattimenti tra formazioni partigiane e tedeschi nelle giornate dell'insurrezione di Torino. Nel 1978 le Ferriere confluirono nella Teksid, società che raggruppava tutte le attività metallurgiche e siderurgiche della Fiat. Dopo essere stata assorbita dalla Finsider (IRI) nel 1982, l'acciaieria venne chiusa definitivamente nel 1992 in seguito alla forte crisi che colpì la siderurgia italiana.",
+         "Tag":"poi-3",
+         "VideoMediaPath":"test.mp4",
+         "VideoLabel":"Video 1",
+         "MediaGallery":[
+            {
+               "Title":"Ziocan",
+               "ThumbPath":"D:/ETT/PROJECTS/Iron Valley/Assets/ETT/IronValley/Graphics/assets/Savignano.jpg",
+               "Items":[
+                  {
+                     "Title":"Ferriere Fiat",
+                     "MediaPath":"D:/ETT/PROJECTS/Iron Valley/Assets/ETT/IronValley/Graphics/assets/Ferriere Fiat.jpg",
+                     "ExternalLink":"https://www.google.com"
+                  },
+                  {
+                     "Title":"Savignano",
+                     "MediaPath":"D:/ETT/PROJECTS/Iron Valley/Assets/ETT/IronValley/Graphics/assets/Savignano.jpg",
+                     "ExternalLink":"https://www.google.com"
+                  },
+                  {
+                     "Title":"Michelin",
+                     "MediaPath":"D:/ETT/PROJECTS/Iron Valley/Assets/ETT/IronValley/Graphics/assets/Michelin.jpg",
+                     "ExternalLink":"https://www.google.com"
+                  }
+               ]
+            },
+            {
+               "Title":"Gallery Michelin",
+               "ThumbPath":"D:/ETT/PROJECTS/Iron Valley/Assets/ETT/IronValley/Graphics/assets/Michelin.jpg",
+               "Items":[
+                  {
+                     "Title":"Michelin",
+                     "MediaPath":"D:/ETT/PROJECTS/Iron Valley/Assets/ETT/IronValley/Graphics/assets/Michelin.jpg",
+                     "ExternalLink":"https://www.google.com"
+                  },
+                  {
+                     "Title":"Savignano",
+                     "MediaPath":"D:/ETT/PROJECTS/Iron Valley/Assets/ETT/IronValley/Graphics/assets/Savignano.jpg",
+                     "ExternalLink":"https://www.google.com"
+                  },
+                  {
+                     "Title":"Ferriere Fiat",
+                     "MediaPath":"D:/ETT/PROJECTS/Iron Valley/Assets/ETT/IronValley/Graphics/assets/Ferriere Fiat.jpg",
+                     "ExternalLink":"https://www.google.com"
+                  }
+               ]
+            }
+         ],
+         "MediaGalleryLabel":"Test Gallery"
+      }
+   ]
+}
