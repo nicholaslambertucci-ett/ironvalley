@@ -1,11 +1,13 @@
-﻿using Ett.Scripts.Localization;
+﻿using Ett.IronValley.Scripts.Data;
+using Ett.Scripts.Localization;
 using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UTI = Ett.IronValley.Scripts.Utilities.Utilities;
 
-namespace Ett.Scripts
+namespace Ett.IronValley.Scripts
 {
     public class SceneManager : MonoBehaviour
     {
@@ -108,7 +110,7 @@ namespace Ett.Scripts
                     Description = "Inaugurato nel 1907 con la denominazione di Ferriere Piemontesi, lo stabilimento di proprietà del gruppo francese Ferriére-sous-Jougne fu acquisito nel 1917 dal gruppo Fiat. Destinato alla produzione e alla lavorazione dell'acciaio, si affermò presto come uno dei più importanti stabilimenti del gruppo industriale torinese. Nel corso della seconda guerra mondiale al suo interno vi lavoravano circa 5000 operai. Punto nevralgico dell'antifascismo e della Resistenza torinese, nell'aprile del 1945 le Ferriere Fiat furono teatro di violenti combattimenti tra formazioni partigiane e tedeschi nelle giornate dell'insurrezione di Torino. Nel 1978 le Ferriere confluirono nella Teksid, società che raggruppava tutte le attività metallurgiche e siderurgiche della Fiat. Dopo essere stata assorbita dalla Finsider (IRI) nel 1982, l'acciaieria venne chiusa definitivamente nel 1992 in seguito alla forte crisi che colpì la siderurgia italiana.",
                     Tag = "poi-3",
                     Uuid = Guid.NewGuid(),
-                    Approfondimenti = new IronGallery(){
+                    Insights = new IronGallery(){
                         Items = new IronGalleryItem[]{
                             new IronGalleryItem(){
                                 Title = "Item 1",
@@ -141,7 +143,7 @@ namespace Ett.Scripts
                 Debug.Log($"Changing language! Current Language: {LocalizationManager.SelectedLanguage}");
                 var newLan = LocalizationManager.SelectedLanguage.Equals(LocalizationManager.Language.Ita) ? LocalizationManager.Language.Eng : LocalizationManager.Language.Ita;
                 LocalizationManager.Instance.ChangeLanguage(newLan);
-            });          
+            });
 
             FadeInSplash();
         }
@@ -157,7 +159,7 @@ namespace Ett.Scripts
 
         private void FadeInSplash()
         {
-            Utilities.FadeIn(SplashCanvasGroup, Utilities.Easing.EXP, TimeToFade, () =>
+            UTI.FadeIn(SplashCanvasGroup, UTI.Easing.EXP, TimeToFade, () =>
             {
                 FadeOutSplash();
             });
@@ -165,7 +167,7 @@ namespace Ett.Scripts
 
         private void FadeOutSplash()
         {
-            Utilities.FadeOut(SplashCanvasGroup, Utilities.Easing.EXP, TimeToFade, () =>
+            UTI.FadeOut(SplashCanvasGroup, UTI.Easing.EXP, TimeToFade, () =>
             {
                 FadeInMap();
             });
@@ -173,7 +175,7 @@ namespace Ett.Scripts
 
         private void FadeInMap()
         {
-            Utilities.FadeIn(MainCanvasGroup, Utilities.Easing.EXP, TimeToFade, () =>
+            UTI.FadeIn(MainCanvasGroup, UTI.Easing.EXP, TimeToFade, () =>
             {
                 Debug.Log("interact!");
             });
@@ -196,7 +198,7 @@ namespace Ett.Scripts
 
                       webcamTexture.Play();
 
-                      Utilities.FadeIn(WebcamCanvas, Utilities.Easing.EXP, TimeToFade, () =>
+                      UTI.FadeIn(WebcamCanvas, UTI.Easing.EXP, TimeToFade, () =>
                       {
                           Debug.Log("finished fading in camera!");
                       });

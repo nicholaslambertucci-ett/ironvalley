@@ -1,0 +1,17 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class SheetItem
+{
+    public string Title;
+    public string Subtitle;
+    public string Description;
+    public Type Type;
+    public SheetItem[] Items;
+    public string MediaPath;
+}
+
+public enum Type { SheetMain, Gallery_Img, Gallery_Vid, Sheet_Link, VR }
+

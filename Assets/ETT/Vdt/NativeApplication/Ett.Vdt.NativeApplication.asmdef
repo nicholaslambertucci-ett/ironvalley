@@ -1,0 +1,10 @@
+{
+    "name": "Ett.Vdt.NativeApplication",
+    "references": [
+        "Ett.Vdt"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
